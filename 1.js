@@ -28,16 +28,16 @@
 // }
 
 
-const profile = {
-    userName : "shradhakhapra" ,
-    isFollow: false,
-    posts : 195,
-    followers : 569000,
-    following : 4,
-    about : "Apna College",
-};
+// const profile = {
+//     userName : "shradhakhapra" ,
+//     isFollow: false,
+//     posts : 195,
+//     followers : 569000,
+//     following : 4,
+//     about : "Apna College",
+// };
 
-for(let i in profile){
-    console.log(i);
-}
+// for(let i in profile){
+//     console.log(i);
+// }
 
