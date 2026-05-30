@@ -1,14 +1,16 @@
 /*                 
-
-* JAVASCRIPT
+1:23 
+* JAVASCRIPT 
 
 We can directly write and run our JS code on our console of any website (using Inspect).
 
 Ctrl + k -> Clears the console
-___________________________________________________________
+__________________________________________________________________________________________
 ? ALERTS 
 -> Popups
 Eg:  alert("Apna College");
+
+This way of writing can only be done on browser, not on VS Code (as it uses Node.js)
 
 ? PROMPTS
 -> Alerts along with taking an input
@@ -19,7 +21,7 @@ Eg: prompt("hello!");
 Eg:  
 let Name = prompt("Enter your Name");
 console.log(Name);
-___________________________________________________________
+__________________________________________________________________________________________
 ! CHATPER 1 - VARIABLES AND DATATYPES
 
 ? console.log()
@@ -28,13 +30,19 @@ Eg: console.log("Apna College");
 
 *(we can write it both in ' ' or " ")
 
+! TO PRINT ALL TOGETHER -> console.table( [] )
+Eg: console.table( [name, rollNo] )
+
+This print the values in form of a table.
+
+! Another way
 ? node <file_name>
-We can write "node basics.js" in the terminal, which also do the same thing as producing the output.
+We can write this in the terminal, which also do the same thing as producing the output.
 
 # In order to connect js code to the website (browser), we'll create an HTML file, and connect it with our js file.
 
 In this way, we will establish an Indirect connection between JS file and the browser.
-___________________________________________________________
+__________________________________________________________________________________________
 ? VARIABLES
 -> These are the containers which store data.
 
@@ -53,7 +61,7 @@ We can directly write it as it is, and the compiler would automatically interpre
 
 ^ NOT DEFINED
 -> It doesn't exist at all.
-___________________________________________________________
+__________________________________________________________________________________________
 ? RULES FOR VARIABLES:
 
 1) Case-sensitive ('a' and 'A' are different)
@@ -61,12 +69,20 @@ ___________________________________________________________
 3) 1st character can never be a digit.
 4) Reserved keywords should not be kept as variable names.
 
+*We can declare variable even without writing "var/let/const". It will work, but it is not preferred. 
+
+* Whether we use ";" or not, its our choice. It's not mandatory to use.
+
+* If we declare a variable, but not give it a value, then it becomes undefined.
+
 There are other primary ways to define variables using keywords:
 
 ? 1) var
 *-> It can both be re-declared and updated.
 *-> Scope: Global (can be used anywhere in the code)
 -> Functional scope
+
+(Scope is nothing but these curly braces)
 
 -> var itself adds itself to the window object.
 
@@ -118,34 +134,61 @@ If we write the same things within curly braces, then its possible.
 
 -> During initialization, if we don't assign a value to it, then we'll get an error.
 
--> We can use it to fix con stants like PI, AREA (formula).
+-> We can use it to fix constants like PI, AREA (formula).
 
 Eg: const PI = 3.14;
 
 & let and const are a new way of declaring variables, which come under ES6. (Modern JS)
-___________________________________________________________
+__________________________________________________________________________________________
 ? FUNCTIONS 
 We use them in order to use the code, and to call it whenever we need. (We can run functions with different parameters - values)
 
-The parameters which we send during calling a function are known as "Arguments". It is the real value, we pass.
+The parameters which we send while calling a function are known as "Arguments". It is the real value, we pass.
 
 Whereas, Parameters inside a fn store the value of those Arguments.
 
-& IMPORTANT
+! IMPORTANT
 When we declare a variable inside a function, then its defined as functional scope.
 
-That is, even if a variable is declared within a loop present within a fn, we can still use it throghout our fn.___________________________________________________________
+That is, even if a variable is declared within a loop present within a fn, we can still use it throghout our fn.
+__________________________________________________________________________________________
 ? DATA TYPES 
 
 * 1) PRIMITIVE (7)
--> Number (includes -> int, float, double etc.)
--> String 
--> Boolean (T,F)
--> Null
--> Undefined
+1) Number (includes -> int, float, double etc.)
+2) String 
+3) Boolean (T,F)
+4) Null (standalone value)
+5) Undefined (no value is assigned yet)
+6) Bigint (output ends with 'n')
+7) Symbol (used mainly for uniqueness for componenets, especially in React, Figma)
+__________________________________________________________________________________________
+* TYPEOF
+To know the typw of a variable, we use "typeof".
+console.log(typeof ___)
 
--> Bigint (output ends with 'n')
--> Symbol
+# when we check the type of null. then it comes to be "object".
+# and of undefined, its undefined
+__________________________________________________________________________________________
+* TYPE CONVERSION
+let age = "18"                         (We initially saved it as String)
+console.log(Number(age))          (We converted it into Number datatype)
+
+If that string was invalid like "18abc", and we tried to explicitly convert it into number, then it would convert the type into Number, but the value will be returned as NaN (Not a Number).
+
+String -> Number = Nan (if mixed)
+undef  -> Number = Nan
+null   -> Number = 0
+false  -> Number = 0
+true   -> Number = 1  
+
+let checkIfTrue = 1
+console.log(Boolean(checkIfTrue))  -> true (O/P)
+__________________________________________________________________________________________
+* OPERATIONS
+
+console
+__________________________________________________________________________________________
 
 * NO-BRACKET -> PRIMITIVE
 * BRACKET    -> REFERENCE
