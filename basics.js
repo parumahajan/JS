@@ -1,5 +1,5 @@
 /*                 
-1:23 
+2:10
 * JAVASCRIPT 
 
 We can directly write and run our JS code on our console of any website (using Inspect).
@@ -139,7 +139,7 @@ If we write the same things within curly braces, then its possible.
 Eg: const PI = 3.14;
 
 & let and const are a new way of declaring variables, which come under ES6. (Modern JS)
-__________________________________________________________________________________________
+________________________________________________________________________________________________________________
 ? FUNCTIONS 
 We use them in order to use the code, and to call it whenever we need. (We can run functions with different parameters - values)
 
@@ -151,7 +151,7 @@ Whereas, Parameters inside a fn store the value of those Arguments.
 When we declare a variable inside a function, then its defined as functional scope.
 
 That is, even if a variable is declared within a loop present within a fn, we can still use it throghout our fn.
-__________________________________________________________________________________________
+________________________________________________________________________________________________________________
 ? DATA TYPES 
 
 * 1) PRIMITIVE (7)
@@ -162,17 +162,33 @@ ________________________________________________________________________________
 5) Undefined (no value is assigned yet)
 6) Bigint (output ends with 'n')
 7) Symbol (used mainly for uniqueness for componenets, especially in React, Figma)
-__________________________________________________________________________________________
+
+* Note: 
+- JS is a Dynamically-typed language. We don't need to declare variable types explicitly.
+
+- If we don't specify the value of a variable after declaring it, then it returns undefined.
+
+* SYMBOL
+We use Symbol, when we want to make a variable (like id) Unique.
+
+const id = Symbol("123")
+const anotherId = Symbol("123")
+
+Both their values passed inside parameters is same, but their values returned are different.
+
+* BIG INT
+const bigNumber = 123456789n (n lagane se apne aap bigInt bn jaega)
+________________________________________________________________________________________________________________
 * TYPEOF
 To know the typw of a variable, we use "typeof".
 console.log(typeof ___)
 
 # when we check the type of null. then it comes to be "object".
 # and of undefined, its undefined
-__________________________________________________________________________________________
+________________________________________________________________________________________________________________
 * TYPE CONVERSION
 let age = "18"                         (We initially saved it as String)
-console.log(Number(age))          (We converted it into Number datatype)
+console.log(Number(age))               (We converted it into Number datatype)
 
 If that string was invalid like "18abc", and we tried to explicitly convert it into number, then it would convert the type into Number, but the value will be returned as NaN (Not a Number).
 
@@ -184,55 +200,86 @@ true   -> Number = 1
 
 let checkIfTrue = 1
 console.log(Boolean(checkIfTrue))  -> true (O/P)
-__________________________________________________________________________________________
-* OPERATIONS
+________________________________________________________________________________________________________________
+* OPERATIONS 
 
-console
-__________________________________________________________________________________________
+(+ - / * % ) -> except for these, there's a main important thing
 
-* NO-BRACKET -> PRIMITIVE
-* BRACKET    -> REFERENCE
+^ If we write:
+console.log("1" + 2 + 2) --> 122
+console.log(1 + 2 + "2") --> 32
 
-* REFERENCE 
-()
-[] -> used for arrays
-{} 
+It takes that number as string
+
+* HIDDEN FACTS
+console.log(+true) --> 1
+console.log("") --> 0
+console.log(2 > 1 ) --> true
+console.log("2" > 1) --> true
+console.log("02" > 1) --> true
+
+* THERE ARE SOME CONVERSIONS, WHICH CAN END US IN CONFUSION.
+console.log(null) --> null
+
+console.log(null > 0) --> false
+console.log(null < 0) --> false
+console.log(null == 0 ) --> false
+
+* But, when we do this, then we see null is both greater and smaller than 0.
+& This occurs due to "Value Conversion".
+console.log(null >= 0 ) --> true
+console.log(null <= 0 ) --> true
+
+Another reason for this is, that the working of Equality operator "==" and Comparison operatiors like ">", "<", ">=", "<=" is different in JavaScript.
+
+This also indicates an Inconsistency in the JavaScript language, as sometimes it converts null into 0, and sometimes into NaN.
+
+* STRICT-CHECK
+This equality operator checks the datatype too, along with the value.
+
+console.log(2 == 2 ) --> true
+console.log("2" === 2 ) --> false
+________________________________________________________________________________________________________________
+* REFERENCE -> BRACKET (Non-Primitive)   
+* PRIMITIVE -> NO-BRACKET 
+
+* REFERENCE -> (), []. {}      
+& [] -> used for arrays
 
 Here, We can't directly copy the values, which are present inside these brackets. Instead, we pass a Reference.
 
-Reference is any value, whose real value isn't passed on copying, and only reference is passed.
+Reference is any value, whose real value isn't passed on copying, and only reference is passed.So, if any change is made in b, then a's value will also change.
 
-So, if any change is made in b, then a's value will also change.
-
-! EXAMPLE:
+~ EXAMPLE:
 let a = [1,2,3,4];
 let b = a;
 
 b will have reference to a's [1,2,3,4].
------------------------------------------------------------
+________________________________________________________________________________________________________________
 * 2) NON-PRIMITIVE
 -> Objects (sub-categories: Arrays, Fns)
 
 Object -> Collection of Values
 
 We declare multiple primitive datatypes under one single variable, and we call that as an object.
-
 In our object, key value pairs are stored.
-
-& We generally declare objects using the keyword "const".
+We enclose our objects within curly braces { }
+& We generally declare objects using the keyword "const".   (V. IMPPPP)
  
+All non-primitive types when returned gives "Object Function" as return value.
+
 *Eg: (Just like we write in SQL)
 
 const student = {
     fullName : "Pranav Mahajan",
-    age : 21,
-    cgpa : 9.23,
+    age : 22,
+    cgpa : 9.36,
     isPass : true,
 };
 
 OR     
 
-const student = {fullName:"PranavMahajan", age:21};
+const student = {fullName:"PranavMahajan", age:22};
 
 If suppose, we only want something specific out of it, then we use Square Brackets [].
 
@@ -254,18 +301,230 @@ If we use 'const' keyword, then we cannot make changes in case of a variable.
 But when it comes to object's keys, that we can change.
 
 The reason behind it is, that while we change one of the key's value of an object, the entire object's collection doesn't entirely change (its address remains the same), and thus it kind of remains constant, that's why error doesn't come, when we try to change the value of an object's key.
-___________________________________________________________
-? Strings
+________________________________________________________________________________________________________________
+? TYPES OF MEMORIES
+
+1) Stack  -> used in Primitive Data Types
+2) Heap   -> used in Non-Primitive Data Types
+
+* 1) Stack
+We get a copy of the variable declared.
+Original value doesn't changes.
+
+* 2) Heap
+We get the reference from here (Original Value).
+Original value changes here (if reference is changed)
+
+Here, we'll take an example now:
+
+let ytName = "Chai Aur Code"
+let anotherName = ytName
+anotherName = "Hitesh Choudhary"
+
+console.log(anotherName)
+console.log(ytName)
+
+Here, when we change the value of "anotherName", then the original value doesn't changes as it is passed as Reference.
+________________________________________________________________________________________________________________
+? STRINGS
 
 Strings are unique/special in javascript.
 
 Anything we try to add with a string, it gets attached.
-(if we try to add string with a number, then that no. gets converted to a string, and then it )
-Eg: 
-"123" + 1 = 1231
-"abc" + 123 = abc123
-___________________________________________________________
-? OPERATORS
+(if we try to add string with a number, then that no. gets converted to a string, and then it gets added )
+
+~ Eg: (Using Traditional Way)
+console.log("123" + 1)    => 1231
+console.log("abc" + 123)  => abc123
+
+This way of concatenation is old, and is generally not preferred.
+Instead there's a modern technique for concatenation.
+
+~ STRING INTERPOLATION (MODERN WAY)
+We use Backticks ` ` in order to concatenate.
+In this way, we create placeholders, and we directly inject the variables.
+
+& Syntax:  console.log(`_____${}_____`) 
+
+Eg: console.log(`Hello, my name is ${name}`)
+
+* METHODS IN STRINGS
+Strings are object type.
+They form a key-value pair.
+
+const getName = new String('hitesh')
+
+console.log(getName[0]) --> h
+console.log(getName.__proto__) --> {} --> This means that it returned an object (It's not empty)
+
+We can check all these methods in detail in console log of our browser, by doing Inspect.
+It will contain a list of functions, properties, and values.
+
+* MOST USED METHODS 
+
+str.toUpperCase()   // Convert to uppercase
+str.toLowerCase()   // Convert to lowercase
+
+str.charAt()        // Get character at index
+str.indexOf()       // Find position of substring
+
+str.trim()          // Remove spaces from both ends
+str.substring()     // Extract characters between indexes
+str.slice()         // Extract part of a string
+str.split()         // Convert string to array
+str.replace()       // Replace first match
+str.replaceAll()    // Replace all matches
+str.includes()      // Check if substring exists
+
+str.startsWith()    // Check starting text
+str.endsWith()      // Check ending text
+str.lastIndexOf()   // Find last occurrence
+
+str.concat()        // Join strings
+str.repeat()        // Repeat string
+
+~ TO UPPER CASE
+console.log(getName.toUpperCase) --> HITESH
+
+~ TO LOWER CASE
+const name1 = "HITESH"
+console.log(name1.toLowerCase) --> hitesh
+
+
+~ CHAR AT
+console.log(getName.charAt(2)) --> t
+
+~ INDEX OF 
+console.log(getName.indexOf('t')) --> 2
+
+
+~ TRIM
+const newString = "    pranav    "
+console.log(newString)  --> pranav
+
+It removes the extra blank (white) spaces.
+
+~ SUBSTRING
+console.log(getName.substring(0,4)) --> HITE  (In Substring, we can only pass +ve values)
+
+~ SLICE
+console.log(getName.slice(0,4)) --> HITE
+console.log("JavaScript".slice(0,4)) --> Java
+
+In slice, we can even give negative values, where it starts from reverse.
+
+~ SPLIT
+console.log("apple,banana,mango".split(","));  --> ["apple", "banana", "mango"]
+
+~ REPLACE
+const url = "https://pranav.com/pranav%20mahajan"
+url.replace('%20', '_')
+
+Here, we give 2 inputs. One to search, and another to replace.
+
+~ REPLACE ALL
+console.log("a-b-a-b".replaceAll("a", "c")); --> c-b-c-b
+
+~ INCLUDES
+url.includes('pranav') --> true
+
+
+~ STARTS WITH
+console.log("JavaScript".startsWith("Java"));
+
+~ ENDS WITH 
+console.log("JavaScript".)endsWith("Script"));  --> true
+
+~ LAST INDEX OF
+let str = "hello world hello";
+
+console.log(str.lastIndexOf("hello"));  --> true
+
+~ CONCAT
+let firstName = "Pranav";
+let lastName = " Mahajan";
+
+console.log(firstName.concat(lastName));  --> Pranav Mahajan
+
+~ REPEAT
+let str = "Hi ";
+
+console.log(str.repeat(3));  --> Hi Hi Hi
+________________________________________________________________________________________________________________
+? NUMBER
+
+There is a way through which we can explicitly declare a number as NUMBER type.
+
+const bal = new Number(100)   (similar way to how we initialize objects)
+
+~ ToString()
+& We can even convert it to String.
+console.log(bal.ToString())    (In this way, we can use String methods on it)
+
+~ toFixed()
+& We can even fix the Precision value
+console.log(bal.toFixed(2)) -> 100.00 
+
+~ toPrecision()
+& This returns value in string datatype, and fixes total digits acc to the value set, and Rounds off as well.
+const num = 45.678
+console.log(num.toPrecision(3)) --> 45.7
+
+const num = 123.89
+console.log(num.toPrecision(3)) --> 124
+
+~ toLocaleString()
+& If we want to improve the readability of our numbers, then we use it. It includes commas within the number.
+const num = 100000
+console.log(num.toLocaleString()) --> 1,00,000
+
+If we want to make it according to country standards (like Indian Standards)
+-> console.log(num.toLocaleString('en-IN'))
+________________________________________________________________________________________________________________
+? MATHS
+
+Many of the maths libraries come along with JS.
+
+~ abs()
+& -ve values becomes +ve
+console.log(Math.abs(-2)) --> 2
+
+~ round()
+console.log(Math.round(4.6)) --> 5
+
+~ ceil()
+& top value meh round off krega
+console.log(Math.ceil(4.2)) --> 5
+
+~ floor()
+& base value pe round off krega
+console.log(Math.floor(4.8)) --> 4
+
+~ min()
+console.log(Math.min(1,2,3,4)) --> 1
+
+~ max()
+console.log(Math.max(1,2,3,4)) --> 4
+
+~ random()
+& it's value always comes between 0 and 1
+console.log(Math.random()) --> 0.5220546605126605 (anything random could come)
+
+& if we want to increase the range, then we can multiply it with a multiplier like 10.
+& But we also want that its value don't come around 0 smthing, so we add one as well! 
+console.log((Math.random() * 10) + 1) 
+
+
+If we want the random no. in a specific range, then we use min and max concept.
+const min = 10
+const max = 20
+
+console.log(Math.floor(Math.random() * (max - min + 1)) + min)
+
+We have to add min, otherwise, it will produce a random value below min
+
+________________________________________________________________________________________________________________
+* OPERATORS
 
 ? Binary Operator 
  +, -, *, /, %, ** (exponential ^)
@@ -281,7 +540,7 @@ ___________________________________________________________
 
 ? Logical Operator 
 && (Logical AND), || (Logical OR), and ! (Logical NOT)
-___________________________________________________________
+________________________________________________________________________________________________________________
 ? CONDITIONAL STATEMENTS
 if, if-else, else-if
 
@@ -298,7 +557,7 @@ let age = 18;
 let result = age >= 18 ? "adult" : "not adult";
 
 console.log(result);
-___________________________________________________________
+________________________________________________________________________________________________________________
 ? SWITCH CASE
 
 let <variable> = value;
@@ -331,7 +590,7 @@ switch(fruit){
     default:
         console.log('Sorry, we are out of ${fruit}');
 }
-___________________________________________________________
+________________________________________________________________________________________________________________
 ? LOOPS
 Other than the primary: for, while, and do-while, 
 we have 2 special loops:  
