@@ -521,8 +521,41 @@ const max = 20
 
 console.log(Math.floor(Math.random() * (max - min + 1)) + min)
 
-We have to add min, otherwise, it will produce a random value below min
+We have to add min, otherwise, it will produce a random value below min.
+________________________________________________________________________________________________________________
+? DATE 
 
+It represents a single moment in time in a platform independent format.
+It is calculated in milli-seconds.
+It is an Object.
+
+JS team is trying to propose an easy way to use time function through "Temporal".
+But it is still in process (not fully implemented yet)
+
+let myDate = new Date()
+console.log(myDate)        --> 2026-06-01T19:46:16.408Z  (we get smthing weird like thing)
+
+& We can make its output look better by converting it to string.
+console.log(myDate.toString())  --> Tue Jun 02 2026 01:18:08 GMT+0530 (India Standard Time)
+
+console.log(myDate.toDateString()) --> Tue Jun 02 2026
+
+console.log(myDate.toISOString()) --> 2026-06-01T19:55:00.016Z
+
+console.log(myDate.toJSON()) --> 2026-06-01T19:55:00.016Z
+
+console.log(myDate.toLocaleDateString()) --> 2/6/2026
+
+console.log(myDate.toLocaleString()) --> 2/6/2026, 1:25:00 am
+We follow MM/DD/YY.
+
+~ Timestamp
+console.log(myTimeStamp);
+
+console.log(myDate.getTime());
+
+console.log(Math.floor(Date.now()/1000));
+3:08
 ________________________________________________________________________________________________________________
 * OPERATORS
 
