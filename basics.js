@@ -705,21 +705,6 @@ arr.includes(_)
 arr.indexOf(_)
 arr.join() -> this removes the bracket of array, and changes the type to String
 
-
-
-________________________________________________________________________________________________________________
-* SHERIYANS
-
-? HOISTING
--> Declarations are moved to the top.
-(Not initializations)
-
-That is, if suppose we have declared a variable or function in line 5 or later, and we call that or print it before it, then its possible to do that in JS, and it won't throw an error.
-________________________________________________________________________________________________________________
-? PUSH - POP  SHIFT UNSHIFT (In Arrays)
-Unshift (Push) -> To add one value
-Shift   (Pop)  -> To remove one value
-________________________________________________________________________________________________________________
 * Slice & Splice
 Slice  -> Kahan se lekar, kahan tk krna hai Slice.
 Splice -> Kahan se start krna hai, aur kitno ko krna hai Splice. 
@@ -727,7 +712,7 @@ Splice -> Kahan se start krna hai, aur kitno ko krna hai Splice.
 ? Slice 
 let arr = [1, 2, 3, 4, 5, 6]
 console.log(arr.slice(1, 3))  --> [2,3]
-________________________________________________________________________________________________________________
+
 ? SPLICE
 let arr = [1, 2, 3, 4, 5, 6]
 console.log(arr.splice(1, 3))  --> [2, 3, 4]
@@ -739,6 +724,56 @@ We tell 2 things:
 
 arr.splice(2,2); 
 -> It will remove 2 values, starting from index 2.
+
+* MORE ARRAY OPERATORS
+
+? CONCAT
+let arr1 = [1,2,3]
+let arr2 = [4,5,6]
+let mergedArray = arr1.concat(arr2)
+console.log(mergedArray)  --> [ 1, 2, 3, 4, 5, 6 ]
+
+~ Spread Operator
+console.log(...arr1, ...arr2) --> 1 2 3 4 5 6       
+
+This removes the brackets and commas, and spreads the values.
+We insert "..." in the beginning, while mentioning our variable.
+
+~ Flat Operator
+It returns a new array with all sub-array elts concatenated into it recursively.
+Basically, this operator can convert all sub-arrays.
+
+Here, we also need to mention the "Depth" along, so in that case, we can mention it as "Infinity", so that it can include every sub-array present in an array, and convert them all in one single array.
+
+const arr3 = [1,2,3 , [4,5,6] , 7 , [8,9]]    // array with sub-arrays
+console.log(arr3.flat(Infinity))   -->   [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+
+~ Array.isArray()
+console.log(Array.isArray("Pranav")) --> false
+
+~ Array.from
+console.log(Array.from("Pranav")) --> [ 'P', 'r', 'a', 'n', 'a', 'v' ]
+
+It will break it into individual elts. Array.from doesn't work on numbers. It only works on strings.
+
+It gives an empty array "[]" in result, if there's something it isn't able to identify, or produce a specific output from. 
+
+console.log(Array.from({name: "pranav"}))  --> []
+
+~ Array.of
+let arr1 = 100
+let arr2 = 200
+let arr3 = 300
+
+console.log(Array.of(arr1, arr2, arr3))  --> [ 100, 200, 300 ]
+________________________________________________________________________________________________________________
+* SHERIYANS
+
+? HOISTING
+-> Declarations are moved to the top.
+(Not initializations)
+
+That is, if suppose we have declared a variable or function in line 5 or later, and we call that or print it before it, then its possible to do that in JS, and it won't throw an error.
 ________________________________________________________________________________________________________________
 ? Object
 It holds the details of an individual thing, in a key-value pair.
