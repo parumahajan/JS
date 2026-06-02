@@ -684,7 +684,30 @@ const profile = {
 for(let i in student){
     console.log(i);
 }
-___________________________________________________________
+________________________________________________________________________________________________________________
+* ARRAYS
+It is a collection of elts, where we enclose them in "Square Brackets [ ].
+Any type of elt can be present within the Array.
+
+Eg: let details = ["Pranav", 22, "B.Tech", true]
+
+Array copy operations create "Shallow copy". (It shares the same reference point)
+
+~ Another way of declaring Arrays
+const arr = new Array(____)       (Here, no need of using Square Brackets)
+
+* Operations:
+arr.push(_)
+arr.pop()
+arr.unshift(_)  --> it inserts elt at the start
+arr.shift(_)  --> it removes elt from the start
+arr.includes(_)
+arr.indexOf(_)
+arr.join() -> this removes the bracket of array, and changes the type to String
+
+
+
+________________________________________________________________________________________________________________
 * SHERIYANS
 
 ? HOISTING
@@ -692,12 +715,22 @@ ___________________________________________________________
 (Not initializations)
 
 That is, if suppose we have declared a variable or function in line 5 or later, and we call that or print it before it, then its possible to do that in JS, and it won't throw an error.
-___________________________________________________________
+________________________________________________________________________________________________________________
 ? PUSH - POP  SHIFT UNSHIFT (In Arrays)
 Unshift (Push) -> To add one value
 Shift   (Pop)  -> To remove one value
-___________________________________________________________
+________________________________________________________________________________________________________________
+* Slice & Splice
+Slice  -> Kahan se lekar, kahan tk krna hai Slice.
+Splice -> Kahan se start krna hai, aur kitno ko krna hai Splice. 
+
+? Slice 
+let arr = [1, 2, 3, 4, 5, 6]
+console.log(arr.slice(1, 3))  --> [2,3]
+________________________________________________________________________________________________________________
 ? SPLICE
+let arr = [1, 2, 3, 4, 5, 6]
+console.log(arr.splice(1, 3))  --> [2, 3, 4]
 If we want to remove any value in middle (or any specific index of array), then we use Splice.
 
 We tell 2 things:
@@ -706,7 +739,7 @@ We tell 2 things:
 
 arr.splice(2,2); 
 -> It will remove 2 values, starting from index 2.
-___________________________________________________________
+________________________________________________________________________________________________________________
 ? Object
 It holds the details of an individual thing, in a key-value pair.
 
@@ -734,7 +767,7 @@ car.colour
 
 ^ UPDATING A PROPERTY
 car.colour = "Silver"
-___________________________________________________________
+________________________________________________________________________________________________________________
 ? WINDOW 
 
 There are some things which are not available within JS, which we can find within the browser. 
