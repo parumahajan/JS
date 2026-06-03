@@ -767,18 +767,17 @@ let arr3 = 300
 
 console.log(Array.of(arr1, arr2, arr3))  --> [ 100, 200, 300 ]
 ________________________________________________________________________________________________________________
-* SHERIYANS
-
-? HOISTING
--> Declarations are moved to the top.
-(Not initializations)
-
-That is, if suppose we have declared a variable or function in line 5 or later, and we call that or print it before it, then its possible to do that in JS, and it won't throw an error.
-________________________________________________________________________________________________________________
 ? Object
 It holds the details of an individual thing, in a key-value pair.
 
-! Types of Objects:
+~ Objects can be declared in 2 ways: 
+1) Literal       --> Never Singleton
+2) Constructor   --> Always Singleton
+
+Singleton - Whenever we create a constructor through it, then it creates a "Singleton" object.
+But, when we declare it as Literals, then Singleton is not formed.
+
+~ Types of Objects:
 
 * 1) Blank Object
 We just initialize a variable with an empty curly bracket.
@@ -800,15 +799,125 @@ A property whose value is actually a function.
 ^ ACCESSING THE PROPERTY ('.' Operator)
 car.colour
 
+~ There's a problem which occurs in case of Dot Operator.
+But we can't access the property if the key is written as "String".
+
+Eg: 
+var car = {
+    "fullName": "Swift Dezire"
+}
+
+Now, this cannot be accessed just by using dot operator "." 
+We need to use Square Brackets for this accessing its property.
+
+console.log(car["fullName"])
+
+~ FREEZE
+We can even lock the values using Freeze.
+& Syntax: Object.freeze(<var_name>)
+
 ^ UPDATING A PROPERTY
 car.colour = "Silver"
+
+? Using as functions
+We can even use the objects as functions.
+
+car.greeting = function(){
+    console.log("Hello World")
+}
+
+console.log(car.greeting) --> [Function (anonymous)]
+
+console.log(car.greeting()) 
+
+~ O/P:
+Hello World
+undefined
+
+& This means that the function is not executed, and we have only received the reference.
+
+Now, if we want to reference any name from the object, then we'll use string interpolation.
+
+car.greeting2 = function(){
+    console.log(`Hello World, ${this.name}`)    --> We'll use Backticks `` and String Interpolation ${}
+}
+
+console.log(car.greeting2())  
+
+~ O/P:
+Hello World, Swift
+undefined
+
+* WAYS OF CREATING OBJECTS:
+
+& WAY 1
+const obj1 = new Object()  --> Creates Singleton Object 
+
+& WAY 2
+const obj2 = {}  --> Creates Non-Singleton Object 
+
+obj1.id = "123"
+obj1.name = "Pranav"
+obj1.isLoggedIn = true
+
+Now, we'll create sub-objects
+let regUser = {
+    email: "abc@gmail.com",
+    fullName: {
+        userFullName: {
+            firstName: "Pranav",
+            lastName: "Mahajan"
+        }
+    }
+}
+
+console.log(regUser.fullname.userFullName.firstName);
+
+& And let's suppose some object is present, but not defined, or if it doesn't exists
+& Then we use "?" in front of that object.
+console.log(regUser.fullname?.userFullName.firstName);
+
+* COMBINING OBJECTS
+const obj1 = {1: "a", 2: "b"}   // we took keys as Numbers, and values as Strings.
+const obj2 = {3: "c", 4: "d"}
+
+const obj3 = Object.assign(obj1, obj2)
+
+console.log(obj3) --> { '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
+
+~ Object.assign()
+& It copies all enumerable own properties from one or more source objects tot a target object.
+
+& SYNTAX : Object.assign(target, source)
+
+But sometimes, the target arrays can be more, so for that, we take an empty array while taking the parameters for Object.assign.
+
+& Object.assign({}, target, source)
+
+Eg: Object.assign({}, obj1, obj2, obj4)  --> {} : target, obj 1,2,4 : source
+
+* ANOTHER WAY OF DOING IT : (Spread operator)
+
+const obj3 = {...obj1, ...obj2}
+console.log(obj3)  --> { '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
+
+~ If we want all its keys and values
+Object.keys(regUser))
+Object.values(regUser))
+Object.entries(regUser))
+
 ________________________________________________________________________________________________________________
-? WINDOW 
+? HOISTING
+-> Declarations are moved to the top. (Not initializations)
+
+That is, if suppose we have declared a variable or function in line 5 or later, and we call that or print it before it, then its possible to do that in JS, and it won't throw an error.
+________________________________________________________________________________________________________________
+? WINDOW
 
 There are some things which are not available within JS, which we can find within the browser. 
 
 But, we can still use them within JS (despite being not a part of it).
 
 That we call as "Window". 
-
+________________________________________________________________________________________________________________
 */
