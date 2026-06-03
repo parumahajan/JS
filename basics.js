@@ -937,6 +937,38 @@ The only difference of writing here is, that we don't define any variable for it
 
 Tools like JSON formatter can help us understand what's written in JSON code.
 ________________________________________________________________________________________________________________
+* Functions
+
+We create a function definition (function-name), and write function scope (content written inside fn) within it.
+
+& SYNTAX: 
+function <fn_name>() {
+
+}
+
+We add Parenthesis () in front of fn name, so it can add reference, and execute it.
+
+When we are defining a fn, we have to pass some parameters, and
+When we are calling  a fn, we have to pass some arguments.
+
+In order to print our result, we have to use "return" keyword.
+After it, nothing gets printed.
+
+function loginUserMessage(username){
+    
+    if(username === undefined){   // OR if(!username)
+        console.log("Please enter a username")
+        return
+    }
+
+    return `${username} just logged in`
+}
+
+console.log(loginUsername("Pranav"))   --> we are passing argument here
+console.log(loginUserMessage())        --> we are not passing argument here
+
+ If we don't pass the arguments, then it would return 'undefined'.
+________________________________________________________________________________________________________________
 ? HOISTING
 -> Declarations are moved to the top. (Not initializations)
 
