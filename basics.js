@@ -905,7 +905,37 @@ console.log(obj3)  --> { '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
 Object.keys(regUser))
 Object.values(regUser))
 Object.entries(regUser))
+________________________________________________________________________________________________________________
+* DE-STRUCTURING
 
+Destructuring can occur in both Objects and Arrays.
+
+const course = {
+    name: "JS",
+    price: 999,
+    courseInstructor: "Hitesh"
+}
+
+const {courseInstructor : instructor} = course
+console.log(instructor)    --> Hitesh
+
+& SYNTAX: <DT> { <og_var_name> : <new_var> } = <Object name>
+________________________________________________________________________________________________________________
+* APIs
+
+We use JSON.
+
+JSON is also an Object.
+It is written just like we write for object.
+The only difference of writing here is, that we don't define any variable for it, and both Keys and Values are Strings (rather than just values beings strings in JS Objects).
+
+{
+    "name": "JS",
+    "price": 999,
+    "courseInstructor": "Hitesh"
+}
+
+Tools like JSON formatter can help us understand what's written in JSON code.
 ________________________________________________________________________________________________________________
 ? HOISTING
 -> Declarations are moved to the top. (Not initializations)
