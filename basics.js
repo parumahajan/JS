@@ -1012,6 +1012,56 @@ We access Windows scope through a keyword.
 
 When we check it on our browser's console, then the global scope would be different, and
 When we check it on our code env (through Node), then that global scope would be different.
+
+& When we define a nested-function, then we follow this rule:
+Chota bade se ice-cream le skta hai, but Bada chote se nhi le skta.
+
+Bolne ka mtlb hai, ki when there are 2 fns defined, where one fn is nested in another, then the nested fn can inherit properties (or use them), since the one is defined globally for the nested one, so it can use it.
+But the one, present above the nested fn cannot inherit or use any of the properties present inside the scope of the nested fn.
+
+function one(){
+    const firstName = "Pranav"
+
+    function two(){
+        const lastName = "Mahajan"
+        console.log(firstName);
+    }
+
+    console.log(lastName); --> This will throw an error, if we write this
+    
+    two()
+}
+
+one()  // --> if we don't call it, the two() will also not get executed
+
+& JS meh line-by-line execution hoti hai, so the moment it will find error in a line, the lines below it won't get executed.
+
+if(true){
+    const firstName = "Pranav"
+
+    if(firstName === "Pranav"){
+        const lastName 
+    }
+}
+
+There's another way, through which we can declare/create a fn, which is by creating a variable. and inside it we're specifying our function.
+
+addfn1(5)                   --> We used concept of Hoisting here
+ Way-1 (Traditional Method)
+function addfn1(num){
+    return num + 1
+}
+
+addfn2(5)
+ Way-2 (Using Variable)
+const addfn2 = function(num){
+    return num + 1
+}
+
+& Problem
+But here, a problem occurs. when we use Hoisting to call a function before it is declared.
+This problem occurs only when a function is declared by calling a variable.
+This issue doesn't arise, when we use the traditional way.
 _______________________________________________________________________________________________________________
 * HOISTING
 -> Declarations are moved to the top. (Not initializations)
