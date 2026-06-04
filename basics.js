@@ -967,7 +967,27 @@ function loginUserMessage(username){
 console.log(loginUsername("Pranav"))   --> we are passing argument here
 console.log(loginUserMessage())        --> we are not passing argument here
 
- If we don't pass the arguments, then it would return 'undefined'.
+If we don't pass the arguments, then it would return 'undefined'.
+________________________________________________________________________________________________________________
+* REST Operator (...)
+
+We use it, when we are passing too many values in the argument of a calling function.
+
+Rest operator and Spread operator have the same way of writing, which is "..."
+The only main difference is the Usecase.
+
+function calculateTotal(...num1){
+    return num1
+}
+console.log(500,1000,2000,5000)  --> [ 500, 1000, 2000, 5000 ]
+
+& But if we do this:
+function calculateTotal(val1, val2, ...num1){
+    return num1
+}
+console.log(calculateTotal(500, 1000, 2000, 5000))  --> [ 2000, 5000 ]
+
+
 ________________________________________________________________________________________________________________
 ? HOISTING
 -> Declarations are moved to the top. (Not initializations)
