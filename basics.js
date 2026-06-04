@@ -998,12 +998,27 @@ function calculateTotal(val1, val2, ...num1){
 }
 console.log(calculateTotal(500, 1000, 2000, 5000))  --> [ 2000, 5000 ]
 _______________________________________________________________________________________________________________
-? HOISTING
+* SCOPE : {}
+
+It comes along with Functions, and if-else
+
+Here, we revolve around: let, const, and var
+
+let and const have block scope,
+while var has global scope. 
+
+# There is even a node scope, and a windows scope.
+We access Windows scope through a keyword.
+
+When we check it on our browser's console, then the global scope would be different, and
+When we check it on our code env (through Node), then that global scope would be different.
+_______________________________________________________________________________________________________________
+* HOISTING
 -> Declarations are moved to the top. (Not initializations)
 
 That is, if suppose we have declared a variable or function in line 5 or later, and we call that or print it before it, then its possible to do that in JS, and it won't throw an error.
 _______________________________________________________________________________________________________________
-? WINDOW
+* WINDOW
 
 There are some things which are not available within JS, which we can find within the browser. 
 
