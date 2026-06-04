@@ -1,11 +1,10 @@
 /*                 
-2:10
 * JAVASCRIPT 
 
 We can directly write and run our JS code on our console of any website (using Inspect).
 
 Ctrl + k -> Clears the console
-__________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? ALERTS 
 -> Popups
 Eg:  alert("Apna College");
@@ -21,7 +20,7 @@ Eg: prompt("hello!");
 Eg:  
 let Name = prompt("Enter your Name");
 console.log(Name);
-__________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ! CHATPER 1 - VARIABLES AND DATATYPES
 
 ? console.log()
@@ -42,7 +41,7 @@ We can write this in the terminal, which also do the same thing as producing the
 # In order to connect js code to the website (browser), we'll create an HTML file, and connect it with our js file.
 
 In this way, we will establish an Indirect connection between JS file and the browser.
-__________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? VARIABLES
 -> These are the containers which store data.
 
@@ -61,7 +60,7 @@ We can directly write it as it is, and the compiler would automatically interpre
 
 ^ NOT DEFINED
 -> It doesn't exist at all.
-__________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? RULES FOR VARIABLES:
 
 1) Case-sensitive ('a' and 'A' are different)
@@ -139,7 +138,7 @@ If we write the same things within curly braces, then its possible.
 Eg: const PI = 3.14;
 
 & let and const are a new way of declaring variables, which come under ES6. (Modern JS)
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? FUNCTIONS 
 We use them in order to use the code, and to call it whenever we need. (We can run functions with different parameters - values)
 
@@ -151,7 +150,7 @@ Whereas, Parameters inside a fn store the value of those Arguments.
 When we declare a variable inside a function, then its defined as functional scope.
 
 That is, even if a variable is declared within a loop present within a fn, we can still use it throghout our fn.
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? DATA TYPES 
 
 * 1) PRIMITIVE (7)
@@ -178,14 +177,14 @@ Both their values passed inside parameters is same, but their values returned ar
 
 * BIG INT
 const bigNumber = 123456789n (n lagane se apne aap bigInt bn jaega)
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * TYPEOF
 To know the typw of a variable, we use "typeof".
 console.log(typeof ___)
 
 # when we check the type of null. then it comes to be "object".
 # and of undefined, its undefined
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * TYPE CONVERSION
 let age = "18"                         (We initially saved it as String)
 console.log(Number(age))               (We converted it into Number datatype)
@@ -200,7 +199,7 @@ true   -> Number = 1
 
 let checkIfTrue = 1
 console.log(Boolean(checkIfTrue))  -> true (O/P)
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * OPERATIONS 
 
 (+ - / * % ) -> except for these, there's a main important thing
@@ -239,7 +238,7 @@ This equality operator checks the datatype too, along with the value.
 
 console.log(2 == 2 ) --> true
 console.log("2" === 2 ) --> false
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * REFERENCE -> BRACKET (Non-Primitive)   
 * PRIMITIVE -> NO-BRACKET 
 
@@ -255,7 +254,7 @@ let a = [1,2,3,4];
 let b = a;
 
 b will have reference to a's [1,2,3,4].
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * 2) NON-PRIMITIVE
 -> Objects (sub-categories: Arrays, Fns)
 
@@ -301,7 +300,7 @@ If we use 'const' keyword, then we cannot make changes in case of a variable.
 But when it comes to object's keys, that we can change.
 
 The reason behind it is, that while we change one of the key's value of an object, the entire object's collection doesn't entirely change (its address remains the same), and thus it kind of remains constant, that's why error doesn't come, when we try to change the value of an object's key.
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? TYPES OF MEMORIES
 
 1) Stack  -> used in Primitive Data Types
@@ -325,7 +324,7 @@ console.log(anotherName)
 console.log(ytName)
 
 Here, when we change the value of "anotherName", then the original value doesn't changes as it is passed as Reference.
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? STRINGS
 
 Strings are unique/special in javascript.
@@ -450,7 +449,7 @@ console.log(firstName.concat(lastName));  --> Pranav Mahajan
 let str = "Hi ";
 
 console.log(str.repeat(3));  --> Hi Hi Hi
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? NUMBER
 
 There is a way through which we can explicitly declare a number as NUMBER type.
@@ -480,7 +479,7 @@ console.log(num.toLocaleString()) --> 1,00,000
 
 If we want to make it according to country standards (like Indian Standards)
 -> console.log(num.toLocaleString('en-IN'))
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? MATHS
 
 Many of the maths libraries come along with JS.
@@ -522,7 +521,7 @@ const max = 20
 console.log(Math.floor(Math.random() * (max - min + 1)) + min)
 
 We have to add min, otherwise, it will produce a random value below min.
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? DATE 
 
 It represents a single moment in time in a platform independent format.
@@ -556,7 +555,7 @@ console.log(myDate.getTime());
 
 console.log(Math.floor(Date.now()/1000));
 3:08
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * OPERATORS
 
 ? Binary Operator 
@@ -573,7 +572,7 @@ ________________________________________________________________________________
 
 ? Logical Operator 
 && (Logical AND), || (Logical OR), and ! (Logical NOT)
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? CONDITIONAL STATEMENTS
 if, if-else, else-if
 
@@ -590,7 +589,7 @@ let age = 18;
 let result = age >= 18 ? "adult" : "not adult";
 
 console.log(result);
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? SWITCH CASE
 
 let <variable> = value;
@@ -623,7 +622,7 @@ switch(fruit){
     default:
         console.log('Sorry, we are out of ${fruit}');
 }
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? LOOPS
 Other than the primary: for, while, and do-while, 
 we have 2 special loops:  
@@ -684,7 +683,7 @@ const profile = {
 for(let i in student){
     console.log(i);
 }
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * ARRAYS
 It is a collection of elts, where we enclose them in "Square Brackets [ ].
 Any type of elt can be present within the Array.
@@ -766,7 +765,7 @@ let arr2 = 200
 let arr3 = 300
 
 console.log(Array.of(arr1, arr2, arr3))  --> [ 100, 200, 300 ]
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? Object
 It holds the details of an individual thing, in a key-value pair.
 
@@ -905,7 +904,7 @@ console.log(obj3)  --> { '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
 Object.keys(regUser))
 Object.values(regUser))
 Object.entries(regUser))
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * DE-STRUCTURING
 
 Destructuring can occur in both Objects and Arrays.
@@ -920,7 +919,7 @@ const {courseInstructor : instructor} = course
 console.log(instructor)    --> Hitesh
 
 & SYNTAX: <DT> { <og_var_name> : <new_var> } = <Object name>
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * APIs
 
 We use JSON.
@@ -936,7 +935,7 @@ The only difference of writing here is, that we don't define any variable for it
 }
 
 Tools like JSON formatter can help us understand what's written in JSON code.
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 * Functions
 
 We create a function definition (function-name), and write function scope (content written inside fn) within it.
@@ -968,7 +967,19 @@ console.log(loginUsername("Pranav"))   --> we are passing argument here
 console.log(loginUserMessage())        --> we are not passing argument here
 
 If we don't pass the arguments, then it would return 'undefined'.
-________________________________________________________________________________________________________________
+
+& We can also use Functions like this:
+const user = {
+    username: "Pranav",
+    age: 22
+}
+
+function detailsOfObj(anyObject){
+    console.log(`Name of user is ${anyObject.username} and Age of user is ${anyObject.age}`)
+}
+
+console.log(detailsOfObj(user));
+_______________________________________________________________________________________________________________
 * REST Operator (...)
 
 We use it, when we are passing too many values in the argument of a calling function.
@@ -986,14 +997,12 @@ function calculateTotal(val1, val2, ...num1){
     return num1
 }
 console.log(calculateTotal(500, 1000, 2000, 5000))  --> [ 2000, 5000 ]
-
-
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? HOISTING
 -> Declarations are moved to the top. (Not initializations)
 
 That is, if suppose we have declared a variable or function in line 5 or later, and we call that or print it before it, then its possible to do that in JS, and it won't throw an error.
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? WINDOW
 
 There are some things which are not available within JS, which we can find within the browser. 
@@ -1001,5 +1010,5 @@ There are some things which are not available within JS, which we can find withi
 But, we can still use them within JS (despite being not a part of it).
 
 That we call as "Window". 
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 */
