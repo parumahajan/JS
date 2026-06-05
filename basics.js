@@ -1063,6 +1063,40 @@ But here, a problem occurs. when we use Hoisting to call a function before it is
 This problem occurs only when a function is declared by calling a variable.
 This issue doesn't arise, when we use the traditional way.
 _______________________________________________________________________________________________________________
+* THIS KEYWORD
+It tells about the current context. (Points to the current object)
+
+const user = {
+    username : "Pranav",
+    price: 999,
+    welcomeMessage: function(){
+        console.log(`${this.username}, welcome to the website`)
+        console.log(this)
+    }
+}
+
+user.welcomeMessage() --> Pranav, welcome to the website
+
+console.log(user.welcomeMessage); 
+
+console.log(this)     // --> {}
+
+This happens because we're in a node env. due to which, this refers to an empty object.
+
+Earlier the engine was found only in the Browser, but then later it was taken out, and was made into standalone engines like Node, Bun, or Deno.
+
+In Browser, whenever the engine  runs, then the most global object is "Window" object. This is the reason, why we are able to capture all the events of windows.
+
+function chai(){
+    let username = "Pranav"
+    console.log(this.username)   // --> undefined
+    console.log(this);           // --> we get a lot of values
+}
+chai()
+console.log(this);               // --> {}
+
+When we print this outside the function, then we get only "undefined", but when we print this inside a function, then we see, we get a lot of values.
+_______________________________________________________________________________________________________________
 * HOISTING
 -> Declarations are moved to the top. (Not initializations)
 
