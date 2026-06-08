@@ -624,7 +624,8 @@ switch(fruit){
         console.log('Sorry, we are out of ${fruit}');
 }
 _______________________________________________________________________________________________________________
-? LOOPS
+* LOOPS
+
 Other than the primary: for, while, and do-while, 
 we have 2 special loops:  
 1) for-of    
@@ -640,37 +641,49 @@ They help us to iterate on some special data types.
 
 -> Through this, we can fetch the value of each character.
 
-*Syntax:
+
+//*Syntax:
 for(let <var> of <String/Array var>){
     ______    
 }
+*/
 
-*Example:
+// Example: 1
 let str = "Apna College";
 
 for(let i of str){
-    console.log("i", = i));
+    console.log("i:", i)
 }
 
+// Example: 2
+const arr = [1,2,3,4,5]
+for(const i of arr){
+    console.log(i);
+}
+
+// Example: 3
+
+const greetings = "Hello World"
+
+for(const greet of greetings){
+    console.log(greet);
+}
+/*
 When we make this loop, then we don't need to initialize anything. 
-
 We neither see initialization, updation, or the stopping condition.
-
 Everything happens automatically.
-
+________________________________________________________________________________________________________________
 ? 2) FOR-IN LOOP
 -> By using this loop, we can obtain the KEY of our object.
-
 -> We can use it for : Objects and Arrays
 
 * Syntax:
-
 for(let key in <Object variable>){
     _____
 }
 
 Eg:
-
+*/
 const profile = {
     userName : "shradhakhapra" ,
     isFollow: false,
@@ -683,6 +696,12 @@ const profile = {
 for(let i in student){
     console.log(i);
 }
+
+// For-in loop doesn't work on Arrays. We can use it on Objects, but not Arrays.
+// For-of loop can be applied on both arrays and objects.
+_______________________________________________________________________________________________________________
+* MAPS
+
 _______________________________________________________________________________________________________________
 * CONTROL FLOW / LOGIC FLOW 
 Always entire code should not be ran.
@@ -701,12 +720,52 @@ else{
 
 ~ Implicit Scope
 We can also write without using the curly braces as:
-if(condition) ___ ;
+& Syntax: if(condition) ___ ;
 
 we can even write it on multiple lines, using commas 
 if(condition) ____ , ____;
 
+_______________________________________________________________________________________________________________
+* CONTINUE 
 
+1 baar galti maaf 
+
+for(let i = 1; i <= 7; i++){
+    if(i == 5){
+        console.log(`5 is Detected`)
+        break
+        //continue
+    }
+    console.log(`Value of i (with break) is ${i}`)
+}
+
+/*
+Value of i (without continue) is 1
+Value of i (without continue) is 2
+Value of i (without continue) is 3
+Value of i (without continue) is 4
+5 is Detected
+Value of i (without continue) is 5
+Value of i (without continue) is 6
+Value of i (without continue) is 7
+
+Value of i (with continue) is 1
+Value of i (with continue) is 2
+Value of i (with continue) is 3
+Value of i (with continue) is 4
+5 is Detected
+Value of i (with continue) is 6
+Value of i (with continue) is 7
+
+Value of i (with break) is 1
+Value of i (with break) is 2
+Value of i (with break) is 3
+Value of i (with break) is 4
+5 is Detected
+
+
+*/_______________________________________________________________________________________________________________
+// * SWITCH CASE 
 const fruit = "Mango";
 
 switch(fruit){
@@ -722,7 +781,8 @@ switch(fruit){
         console.log("No fruit found :(");
 }
 
-We can even write Switch Case in just 1 line all-together 
+// We can even write Switch Case in just 1 line all-together 
+
 const month = 3
 
 switch(month){
@@ -741,10 +801,10 @@ switch(month){
     default: console.log("May");
 }
 
+/*
 If Default is not added, then it will execute the entire code starting from itself till bottom, except for default.
 
 * TRUTHY / FALSY
-
 const userEmail = "pranavmahajan123@gmail.com"   //  if it was ""  or [], then it would come false
 if(userEmail){
     console.log("Email Exists")
@@ -756,7 +816,7 @@ else{
 Empty String   " "  --> False 
 Empty Array    []   --> False
 
-FALSY VALUE
+* FALSY VALUE
 - false
 - 0 
 - -0
@@ -765,7 +825,7 @@ FALSY VALUE
 - undefined
 - NaN
 
-TRUTHY VALUES
+* TRUTHY VALUES
 - "0"
 - 'false'
 - " " --> empty string
