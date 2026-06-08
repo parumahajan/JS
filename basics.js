@@ -765,10 +765,9 @@ for(const [key, value] of map){
 IN :-  India
 US :-  United States
 FR :-  France
+_______________________________________________________________________________________________________________
+& Now, we will try operating FOR-OF loop on "Strings"
 */
-// _____________________________________________________________________________________________________________
-
-// Now, we will try operating FOR-OF loop on "Strings"
 const myObject = {
     'game1': 'NFS',
     'game2': 'IGI'
@@ -777,8 +776,8 @@ const myObject = {
 for(const [key, value] of myObject){
     console.log((key, ":-", value));
 }
-
-// It will throw an error: myObject is not iterable. 
+/*
+It will throw an error: myObject is not iterable. 
 _______________________________________________________________________________________________________________
 * CONTROL FLOW / LOGIC FLOW 
 Always entire code should not be ran.
