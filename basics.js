@@ -705,7 +705,7 @@ for(const greet of greetings){
 When we make this loop, then we don't need to initialize anything. 
 We neither see initialization, updation, or the stopping condition.
 Everything happens automatically.
-________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________
 ? 2) FOR-IN LOOP
 -> By using this loop, we can obtain the KEY of our object.
 -> We can use it for : Objects and Arrays
@@ -779,6 +779,58 @@ for(const [key, value] of myObject){
 /*
 It will throw an error: myObject is not iterable. 
 _______________________________________________________________________________________________________________
+* HIGHER ORDER ARRAY LOOPS
+Some loops are directly added into the properties.
+*/
+const lang = ["c", "c++". "js", "ts"]
+
+// Callback ka naam nhi hota hai.
+
+const lang = ["C", "C++", "C#", "JS"]
+/*
+? lang.forEach(function name() {})    --> this is how a normal fn is written 
+& Callback doesn't have a name, so we remove it.
+*/
+
+lang.forEach(function (item) {     // --> this is how a Callback fn is written 
+    console.log(item)
+} )  
+
+/* OUTPUT:
+C
+C++
+C#
+JS
+_______________________________________________________________________________________________________________
+
+Now, using Arrow Function:  (isme bhi naam nhi likhenge)
+*/
+lang.forEach( (item) => {
+    console.log(item);
+})
+
+//_____________________________________________________________________________________________________________
+
+function printMe(item){
+    console.log(item)
+}
+lang.forEach(printMe) // we just need to give reference here (and not execute ())
+// Callback basically means to use a function as a parameter of another fn.
+
+//_____________________________________________________________________________________________________________
+
+// We can even give multiple values as parameters inside a function:
+const lang = ["C", "C++", "C#", "JS"]
+lang.forEach( (item, index, arr) => {
+    console.log(item, index, arr);
+})
+
+/* OUTPUT:
+C    0    [ 'C', 'C++', 'C#', 'JS' ]
+C++  1    [ 'C', 'C++', 'C#', 'JS' ]
+C#   2    [ 'C', 'C++', 'C#', 'JS' ]
+JS   3    [ 'C', 'C++', 'C#', 'JS' ]
+_______________________________________________________________________________________________________________
 * CONTROL FLOW / LOGIC FLOW 
 Always entire code should not be ran.
 Instead, the code should run on conditional-based.
@@ -838,8 +890,6 @@ Value of i (with break) is 2
 Value of i (with break) is 3
 Value of i (with break) is 4
 5 is Detected
-
-
 */_______________________________________________________________________________________________________________
 // * SWITCH CASE 
 const fruit = "Mango";
